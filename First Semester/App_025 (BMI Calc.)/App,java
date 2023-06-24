@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class App {
+
+public static void main(String[] args) {
+
+    float weight;
+    float height;
+    float bmi;
+
+    Scanner scan = new Scanner(System.in);
+
+    System.out.println("Enter your weight (in kg):");
+    weight = scan.nextFloat();
+
+    System.out.println("Enter your height (in meters):");
+    height = scan.nextFloat();
+
+    bmi = calculateBMI(weight, height);
+
+    System.out.println("Your BMI is: " + bmi);
+
+    scan.close();
+}
+
+public static float calculateBMI(float weight, float height) {
+    if (weight <= 0 || height <= 0) {
+        System.out.println("Invalid weight or height.");
+        return 0;
+    }
+    float bmi = weight / (height * height);
+    return bmi;
+}
+}
